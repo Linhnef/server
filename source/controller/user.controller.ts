@@ -10,12 +10,13 @@ export default class UserController {
     public async login(@Body() body: ILoginPayload): Promise<TokenData | null> {
         return login(body);
     }
+
     @Get('/')
     public async getUsers(): Promise<Array<User>> {
         return getUsers();
     }
 
-    @Post('/')
+    @Post('/register')
     public async createUser(@Body() body: IUserPayload): Promise<User> {
         return createUser(body);
     }
